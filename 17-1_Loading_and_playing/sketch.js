@@ -2,12 +2,10 @@ let musica;
 let playing;
 let slider;
 
-function preload(){
-  musica = loadSound("bagulino.mp3");
-}
-
 function setup() {
   createCanvas(200, 200);
+
+  musica = loadSound("bagulino.mp3", loaded);
 
   button = createButton('play/stop');
   button.mousePressed(toggle);
@@ -16,6 +14,10 @@ function setup() {
 
 }
   
+function loaded(){
+  playing = true;
+  musica.play();
+}
 
 function draw() {
   background(0);
