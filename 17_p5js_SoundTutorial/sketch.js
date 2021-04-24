@@ -1,6 +1,8 @@
 // tracking error github:
 // https://github.com/processing/p5.js-sound/issues/506
 
+//função currentTime() não funciona
+
 let song;
 let button;
 let jumpButton;
@@ -35,5 +37,12 @@ function tooglePlaying() {
   } else {
     song.stop();
     button.html('play')
+  }
+}
+
+function draw() {
+  //console.log(song.currentTime());
+  if (song.currentTime() > 5) {
+    background(255,0,255);
   }
 }
