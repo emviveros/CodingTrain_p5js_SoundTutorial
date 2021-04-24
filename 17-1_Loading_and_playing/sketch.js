@@ -13,9 +13,6 @@ function setup() {
   sliderRate = createSlider(0, 3, 1, 0.01);
   sliderPan = createSlider(-1, 1, 0, 0.01);
 
-  button = createButton('play/stop');
-  button.mousePressed(toggle);
-
 }
   
 function loaded(){
@@ -28,14 +25,4 @@ function draw() {
   musica.setVolume(sliderVolume.value());
   musica.pan(sliderPan.value());
   musica.rate(sliderRate.value());
-}
-
-function toggle(){
-  if (!playing){
-    playing = true;
-    musica.play();
-  } else{
-    playing = false;
-    musica.stop();
-  }
 }
